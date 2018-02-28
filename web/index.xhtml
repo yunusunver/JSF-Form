@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Basit Checkbox Örnekleri</h2>
+            1.
+            <b style="color: red">Kod yazmayı seviyor musunuz?</b>
+            <h:selectBooleanCheckbox value="#{yb1.yazilimiSeviyormu}"/>
+            
+            <hr/>
+            
+            <h2>Çoklu checkbox kutuları</h2>
+            2.Kendimiz elle doldurduk.<br/>
+            <b style="color:greenyellow">Android severler</b>
+            <h:selectManyCheckbox value="#{yb2.androidSeverler}">
+                <f:selectItem itemValue="1" itemLabel="Veli"/>
+                <f:selectItem itemValue="2" itemLabel="Ali"/>
+                <f:selectItem itemValue="3" itemLabel="Mehmet"/>
+                <f:selectItem itemValue="4" itemLabel="Hasan"/>
+            </h:selectManyCheckbox>
+            <hr/>
+            3.Dizi ile doldurduk<br/>
+            <b style="color: palevioletred">Iphone severler</b>
+            <h:selectManyCheckbox value="#{yb3.iphoneSeverler}">
+                <f:selectItems value="#{yb3.iphoneSeverlerAdiSoyadi}"></f:selectItems>
+            </h:selectManyCheckbox>
+            
+            <hr/>
+            4.Map(Harita) ile Doldurduk<br/>
+            <b style="color: buttonface">JSF severler</b>
+            <h:selectManyCheckbox value="#{yb4.jsfSeverler}">
+                <f:selectItems value="#{yb4.jsfSeverlerAdiSoyadi}"/>
+            </h:selectManyCheckbox>
+            <hr/>
+            5.Bir sınıfın tipindeki başka bir dizi ile doldurduk.
+            <h:selectManyCheckbox value="#{yb5.javaGuiSeverler}">
+                <f:selectItems value="#{yb5.jsfGuiSeverlerAdiSoyadi}" var="gelen" itemLabel="#{gelen.sayiEtiketi}" itemValue="#{gelen.sayiDegeri}"/>
+            </h:selectManyCheckbox>
+            <h:commandButton action="sayfa2" value="Gonder"/>
+        </h:form>
+    </h:body>
+</html>
+
